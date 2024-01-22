@@ -3,14 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { AdminauthguardService } from './adminauthguard.service';
 
 describe('AdminauthguardService', () => {
-  let service: AdminauthguardService;
+	let service: AdminauthguardService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AdminauthguardService);
-  });
+	beforeEach(() => {
+		TestBed.configureTestingModule({});
+		service = TestBed.inject(AdminauthguardService);
+	});
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 });

@@ -1,6 +1,5 @@
 export class Medicine {
-
-    id: number;
-    drugName: string;
-    stock: string;
+	id: number;
+	drugName: string;
+	stock: string;
 }

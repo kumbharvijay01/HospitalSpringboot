@@ -5,23 +5,22 @@ import { Observable } from 'rxjs';
 import { AdminauthService } from './adminauth.service';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AdminauthguardService implements CanActivate {
 
-  constructor(private router: Router, private authService: AdminauthService) { }
+	constructor(private router: Router, private authService: AdminauthService) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot
-    ): boolean | Promise<boolean> | Observable<boolean>{
-    if (this.authService.isUserLoggedIn()) 
-    {
-      return true;
-    }
+	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot
+	): boolean | Promise<boolean> | Observable<boolean> {
+		if (this.authService.isUserLoggedIn()) {
+			return true;
+		}
 
-    else{
+		else {
 
-    this.router.navigate(['home']);
-    return false;
+			this.router.navigate(['home']);
+			return false;
 
-    }
-}
+		}
+	}

@@ -4,31 +4,31 @@ import { Observable } from 'rxjs';
 import { Medicine } from './medicine';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class MedicineService {
 
-  private baseUrl = 'http://localhost:8090/api/v2/medicines';
-  
-  constructor(private httpClient: HttpClient) { }
+	private baseUrl = 'http://localhost:8090/api/v2/medicines';
 
-  getMedicinesList(): Observable<Medicine[]>{
-    return this.httpClient.get<Medicine[]>(`${this.baseUrl}`);
-  }
+	constructor(private httpClient: HttpClient) { }
 
-  createMedicine(medicine: Medicine): Observable<Medicine> {
-    return this.httpClient.post<Medicine>(`${this.baseUrl}`, medicine);
-  }
+	getMedicinesList(): Observable<Medicine[]> {
+		return this.httpClient.get<Medicine[]>(`${this.baseUrl}`);
+	}
 
-  getMedicineById(id: number): Observable<Medicine> {
-    return this.httpClient.get<Medicine>(`${this.baseUrl}/${id}`);
-  }
+	createMedicine(medicine: Medicine): Observable<Medicine> {
+		return this.httpClient.post<Medicine>(`${this.baseUrl}`, medicine);
+	}
 
-  updateMedicine(id: number, medicine: Medicine): Observable<Object> {
-    return this.httpClient.put(`${this.baseUrl}/${id}`, medicine);
-  }
+	getMedicineById(id: number): Observable<Medicine> {
+		return this.httpClient.get<Medicine>(`${this.baseUrl}/${id}`);
+	}
 
-  deleteMedicine(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.baseUrl}/${id}`);
-  }
+	updateMedicine(id: number, medicine: Medicine): Observable<Object> {
+		return this.httpClient.put(`${this.baseUrl}/${id}`, medicine);
+	}
+
+	deleteMedicine(id: number): Observable<Object> {
+		return this.httpClient.delete(`${this.baseUrl}/${id}`);
+	}
 }

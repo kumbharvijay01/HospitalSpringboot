@@ -5,43 +5,44 @@ import { PatientService } from '../patient.service';
 
 
 @Component({
-  selector: 'app-docdash',
-  templateUrl: './docdash.component.html', 
-  styleUrls: ['./docdash.component.css']
+	selector: 'app-docdash',
+	templateUrl: './docdash.component.html',
+	styleUrls: ['./docdash.component.css']
 })
 export class DocdashComponent implements OnInit {
-  searchText: string;
-  patients: Patient[]; 
+	searchText: string;
+	patients: Patient[];
 
-  constructor(private patientService: PatientService,
-    private router: Router) { }
+	constructor(private patientService: PatientService,
+		private router: Router) { }
 
-  ngOnInit(): void {
-    this.getPatients();
-    
-  }
+	ngOnInit(): void {
+		this.getPatients();
 
-  private getPatients(){
-    this.patientService.getPatientslist().subscribe(data => { this.patients = data; 
-    });
-  }
+	}
 
-  viewPatient(id: number) {
+	private getPatients() {
+		this.patientService.getPatientslist().subscribe(data => {
+			this.patients = data;
+		});
+	}
 
-    this.router.navigate(['viewpatient', id]);
+	viewPatient(id: number) {
 
-  }
-  updatePatient(id: number) {
+		this.router.navigate(['viewpatient', id]);
 
-    this.router.navigate(['updatepatient', id]);
+	}
+	updatePatient(id: number) {
 
-  }
+		this.router.navigate(['updatepatient', id]);
 
-  deletePatient(id: number) {
-    this.patientService.deletePatient(id).subscribe(data => {
-      console.log(data);
-      this.getPatients();
-    } ); 
-  }
+	}
+
+	deletePatient(id: number) {
+		this.patientService.deletePatient(id).subscribe(data => {
+			console.log(data);
+			this.getPatients();
+		});
+	}
 
 }

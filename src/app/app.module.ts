@@ -24,49 +24,49 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 import { ViewPatientComponent } from './view-patient/view-patient.component';
 
 const routes: Routes = [
-  { path: '', component: NewsfeedComponent },
-  { path: 'doclogin', component: DocloginComponent },
-  { path: 'adlogin', component: AdminloginComponent },
-  { path: 'home', component: NewsfeedComponent },
-  { path: 'createpatient', component: CreatepatientComponent, canActivate: [AuthGaurdService] },
-  { path: 'docdash', component: DocdashComponent, canActivate: [AuthGaurdService] },
-  { path: 'updatepatient/:id', component: UpdatePatientComponent, canActivate: [AuthGaurdService] },
-  { path: 'admindash', component: AdmindashComponent, canActivate: [AuthGaurdService] },
-  { path: 'medicinelist', component: MedicineListComponent, canActivate: [AuthGaurdService] },
-  { path: 'createmedicine', component: CreatemedicineComponent, canActivate: [AuthGaurdService] },
-  { path: 'updatemedicine/:id', component: UpdateMedicineComponent, canActivate: [AuthGaurdService] },
-  { path: 'appointmentlist', component: AppointmentListComponent, canActivate: [AuthGaurdService] },
-  { path: 'createappointment', component: CreateAppointmentComponent, canActivate: [AuthGaurdService] },
-  { path: 'viewpatient/:id', component: ViewPatientComponent }
+	{ path: '', component: NewsfeedComponent },
+	{ path: 'doclogin', component: DocloginComponent },
+	{ path: 'adlogin', component: AdminloginComponent },
+	{ path: 'home', component: NewsfeedComponent },
+	{ path: 'createpatient', component: CreatepatientComponent, canActivate: [AuthGaurdService] },
+	{ path: 'docdash', component: DocdashComponent, canActivate: [AuthGaurdService] },
+	{ path: 'updatepatient/:id', component: UpdatePatientComponent, canActivate: [AuthGaurdService] },
+	{ path: 'admindash', component: AdmindashComponent, canActivate: [AuthGaurdService] },
+	{ path: 'medicinelist', component: MedicineListComponent, canActivate: [AuthGaurdService] },
+	{ path: 'createmedicine', component: CreatemedicineComponent, canActivate: [AuthGaurdService] },
+	{ path: 'updatemedicine/:id', component: UpdateMedicineComponent, canActivate: [AuthGaurdService] },
+	{ path: 'appointmentlist', component: AppointmentListComponent, canActivate: [AuthGaurdService] },
+	{ path: 'createappointment', component: CreateAppointmentComponent, canActivate: [AuthGaurdService] },
+	{ path: 'viewpatient/:id', component: ViewPatientComponent }
 
 ]
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NewsfeedComponent,
-    DocloginComponent,
-    AdminloginComponent,
-    DocdashComponent,
-    AdmindashComponent,
-    CreatepatientComponent,
-    UpdatePatientComponent,
-    MedicineListComponent,
-    CreatemedicineComponent,
-    UpdateMedicineComponent,
-    AppointmentListComponent,
-    CreateAppointmentComponent,
-    ViewPatientComponent
-  ],
-  imports: [
-    RouterModule.forRoot(routes),
-    FormsModule,
-    BrowserModule,
-    Ng2SearchPipeModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NewsfeedComponent,
+		DocloginComponent,
+		AdminloginComponent,
+		DocdashComponent,
+		AdmindashComponent,
+		CreatepatientComponent,
+		UpdatePatientComponent,
+		MedicineListComponent,
+		CreatemedicineComponent,
+		UpdateMedicineComponent,
+		AppointmentListComponent,
+		CreateAppointmentComponent,
+		ViewPatientComponent
+	],
+	imports: [
+		RouterModule.forRoot(routes),
+		FormsModule,
+		BrowserModule,
+		Ng2SearchPipeModule,
+		AppRoutingModule,
+		HttpClientModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

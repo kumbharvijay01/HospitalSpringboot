@@ -4,39 +4,40 @@ import { Medicine } from '../medicine';
 import { MedicineService } from '../medicine.service';
 
 @Component({
-  selector: 'app-medicine-list',
-  templateUrl: './medicine-list.component.html',
-  styleUrls: ['./medicine-list.component.css']
+	selector: 'app-medicine-list',
+	templateUrl: './medicine-list.component.html',
+	styleUrls: ['./medicine-list.component.css']
 })
 export class MedicineListComponent implements OnInit {
 
-  medicines: Medicine[];
+	medicines: Medicine[];
 
-  constructor(private medicineService: MedicineService,
-    private router: Router) { }
+	constructor(private medicineService: MedicineService,
+		private router: Router) { }
 
-  ngOnInit(): void {
+	ngOnInit(): void {
 
-    this.getMedicines();
+		this.getMedicines();
 
-  }
+	}
 
-  private getMedicines(){
-    this.medicineService.getMedicinesList().subscribe(data => {this.medicines = data;
-    });
+	private getMedicines() {
+		this.medicineService.getMedicinesList().subscribe(data => {
+			this.medicines = data;
+		});
 
-}
+	}
 
-updateMedicine(id: number){
+	updateMedicine(id: number) {
 
-  this.router.navigate(['updatemedicine', id]);
+		this.router.navigate(['updatemedicine', id]);
 
-}
+	}
 
-deleteMedicine(id: number){
-  this.medicineService.deleteMedicine(id).subscribe( data => { 
-    console.log(data);
-    this.getMedicines();
-  })
-}
+	deleteMedicine(id: number) {
+		this.medicineService.deleteMedicine(id).subscribe(data => {
+			console.log(data);
+			this.getMedicines();
+		})
+	}
 }

@@ -11,32 +11,27 @@ import { PatientService } from '../patient.service';
 export class AdmindashComponent implements OnInit {
 
   searchText: string;
-  patients: Patient[]; 
+  patients: Patient[];
 
   constructor(private patientService: PatientService,
     private router: Router) { }
 
   ngOnInit(): void {
-
     this.getPatients();
   }
-
-  private getPatients(){
-    this.patientService.getPatientslist().subscribe(data => { this.patients = data; 
+  private getPatients() {
+    this.patientService.getPatientslist().subscribe(data => {
+      this.patients = data;
     });
   }
-
   updatePatient(id: number) {
-
     this.router.navigate(['updatepatient', id]);
 
   }
-
   deletePatient(id: number) {
     this.patientService.deletePatient(id).subscribe(data => {
       console.log(data);
       this.getPatients();
-    } ); 
+    });
   }
-
 }

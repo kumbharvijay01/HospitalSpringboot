@@ -6,12 +6,11 @@ import com.example.hospital.model.patient;
 import com.example.hospital.repository.PatientRepository;
 
 public class service {
-	
+
 	@Autowired
 	private PatientRepository patientRepository;
-	
+
 	public patient updatePatient(patient patient) {
-       
 		Long id = patient.getId();
 		patient std = patientRepository.findById(id).get();
 		std.setAge(patient.getAge());
@@ -23,7 +22,5 @@ public class service {
 		std.setUrgency(patient.getUrgency());
 		std.setId(patient.getId());
 		return patientRepository.save(std);
-		
 	}
-
 }

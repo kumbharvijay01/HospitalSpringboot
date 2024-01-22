@@ -4,32 +4,32 @@ import { Observable } from 'rxjs';
 import { Patient } from './patient';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class PatientService {
-  
-  
-  private baseUrl = "http://localhost:8080/api/v1/patients";
 
-  constructor(private httpClient: HttpClient) { }
-  
-  getPatientslist(): Observable<Patient[]> {
-    return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
-  }
 
-  createPatient(patient: Patient): Observable<Patient> {
-    return this.httpClient.post<Patient>(`${this.baseUrl}`, patient);
-  }
+	private baseUrl = "http://localhost:9090/api/v1/patients";
 
-  getPatientById(id: number): Observable<Patient> {   
-    return this.httpClient.get<Patient>(`${this.baseUrl}/${id}`);
-  }
+	constructor(private httpClient: HttpClient) { }
 
-  updatePatient(id: number, patient: Patient): Observable<Object> {
-    return this.httpClient.put(`${this.baseUrl}/${id}`, patient);
-  }
+	getPatientslist(): Observable<Patient[]> {
+		return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
+	}
 
-  deletePatient(id: number): Observable<Object> {
-    return this.httpClient.delete(`${this.baseUrl}/${id}`);
-  }
+	createPatient(patient: Patient): Observable<Patient> {
+		return this.httpClient.post<Patient>(`${this.baseUrl}`, patient);
+	}
+
+	getPatientById(id: number): Observable<Patient> {
+		return this.httpClient.get<Patient>(`${this.baseUrl}/${id}`);
+	}
+
+	updatePatient(id: number, patient: Patient): Observable<Object> {
+		return this.httpClient.put(`${this.baseUrl}/${id}`, patient);
+	}
+
+	deletePatient(id: number): Observable<Object> {
+		return this.httpClient.delete(`${this.baseUrl}/${id}`);
+	}
 }
