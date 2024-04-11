@@ -31,7 +31,6 @@ public class PatientController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/patients")
-
 	public List<patient> getAllPatients() {
 		return patientRepository.findAll();
 	}

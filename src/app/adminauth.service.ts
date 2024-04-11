@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class AdminauthService {
-
-	
 	authenticate(username2: string, password2: string) {
 		console.log(username2);
 		console.log(password2);
@@ -16,15 +14,12 @@ export class AdminauthService {
 			return false;
 		}
 	}
-
 	isUserLoggedIn() {
 		let user = sessionStorage.getItem('username2')
 		console.log(!(user === null))
 		return !(user === null)
 	}
-
 	logOut() {
 		sessionStorage.removeItem('username2')
 	}
-
 }
